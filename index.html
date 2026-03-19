@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ice Cream Kentau</title>
+<style>
+body{margin:0;font-family:sans-serif;background:linear-gradient(180deg,#000,#111);color:#fff;text-align:center;}
+.container{max-width:500px;margin:auto;padding:20px;}
+h1{font-size:28px;color:#ff2d55;margin-bottom:10px;}
+p{opacity:0.8;margin-bottom:20px;}
+.card{background:#111;border-radius:20px;margin:10px 0;padding:15px;box-shadow:0 0 20px rgba(255,45,85,0.2);transition:0.3s;}
+.card:hover{transform:scale(1.03);box-shadow:0 0 30px rgba(255,45,85,0.5);}
+.price{font-size:16px;margin:8px 0;color:#00f2ea;}
+button{background:linear-gradient(45deg,#ff2d55,#ff7a18);color:white;border:none;padding:10px;border-radius:12px;font-size:14px;cursor:pointer;width:100%;font-weight:600;margin-top:5px;}
+.socials{margin-top:20px;}
+.socials button{margin-top:10px;background:#222;}
+.footer{margin-top:20px;font-size:12px;opacity:0.6;}
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h1>🍦 Ice Cream Kentau</h1>
+  <p>🔥 TikTok арқылы тапсырыс бер</p>
+
+  <div class="card"><h3>Фруктовый</h3><div class="price">500 ₸</div><button onclick="order('Фруктовый')">Тапсырыс беру</button></div>
+  <div class="card"><h3>Рожок средний</h3><div class="price">700 ₸</div><button onclick="order('Рожок средний')">Тапсырыс беру</button></div>
+  <div class="card"><h3>Рожок большой</h3><div class="price">900 ₸</div><button onclick="order('Рожок большой')">Тапсырыс беру</button></div>
+  <div class="card"><h3>Факел</h3><div class="price">1000 ₸</div><button onclick="order('Факел')">Тапсырыс беру</button></div>
+  <div class="card"><h3>Коктейль</h3><div class="price">1200 ₸</div><button onclick="order('Коктейль')">Тапсырыс беру</button></div>
+
+  <div class="socials">
+    <button onclick="openWhatsApp()">💬 WhatsApp</button>
+    <button onclick="openInstagram()">📸 Instagram</button>
+    <button onclick="openTelegram()">✈️ Telegram</button>
+  </div>
+
+  <div class="footer">© 2026 Ice Cream Kentau</div>
+</div>
+
+<script>
+function order(product){
+  const number = prompt('WhatsApp номеріңізді енгізіңіз:'); 
+  const text = 'Сәлем! Мен ' + product + ' балмұздаққа тапсырыс бергім келеді';
+  window.open(`https://wa.me/${number}?text=${encodeURIComponent(text)}`, '_blank');
+}
+function openWhatsApp(){
+  const number = prompt('WhatsApp номеріңізді енгізіңіз:');
+  window.open(`https://wa.me/${number}`, '_blank');
+}
+function openInstagram(){
+  window.open('https://instagram.com', '_blank');
+}
+function openTelegram(){
+  window.open('https://t.me', '_blank');
+}
+</script>
+
+</body>
+</html>
